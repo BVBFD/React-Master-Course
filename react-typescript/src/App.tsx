@@ -32,6 +32,18 @@ const App = () => {
     color: ${(props) => props.theme.textColor};
   `;
 
+  // Recap!!
+  interface DummyProps {
+    text: string;
+    active?: boolean;
+  }
+
+  const Dummy = ({ text, active = false }: DummyProps) => {
+    return <H1>{text}</H1>;
+  };
+
+  const onClick = (event: React.FormEvent<HTMLButtonElement>) => {};
+
   return (
     <div>
       {/* <Circle borderColor='yellow' bgColor='teal' />
@@ -46,8 +58,14 @@ const App = () => {
         <button>Log in</button>
       </form> */}
       <Container>
-        <H1>Lee Seong Eun</H1>
-        <Button>Click</Button>
+        {/* <H1>Lee Seong Eun</H1> */}
+        {/* <Button>Click</Button> */}
+
+        {/* Recap!! */}
+        <Dummy text='hello' active />
+        <form>
+          <button onClick={onClick}>click me</button>
+        </form>
       </Container>
     </div>
   );
